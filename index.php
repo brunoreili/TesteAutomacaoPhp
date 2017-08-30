@@ -67,22 +67,5 @@
             $result = preg_replace("/\<p\>(.*?)\<\/p\>/i", "\\1", $url);
             echo "$result";
         ?>
-        <div id="storage" style="display:none;">
-        <?php
-            echo "$result";            
-        ?>
-        </div>
-        <script>
-            var dados = document.getElementById("storage").innerHTML.trim().split("*");
-            console.log(dados);
-            
-            var estado = []; 
-            for(i = 0; i < dados.length; i++){
-                estado[i] = dados[i].split("=");
-                sessionStorage.setItem(estado[i][0], estado[i][1]);
-            }
-             
-            //location.href='buttons.html'; //Redireciona para a página linkada
-        </script>
     </body>
 </html>
