@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   
+    <head>
+        <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <title>Automação Residencial</title>
+        
+        <link rel="stylesheet" href="css/materialize.min.css">
+        <link rel="stylesheet" href="css/style.css">
+              
+    </head>
+
+    <body ng-app="myApp" ng-controller="myCtrl">      
+        <div class="container">
+            <div class="center">
+                <div class="card">                
+                    <div class="card-content row">
+                      <h5 class="m-y">Controle</h5>
+                      <form action="http://hometeste.dlinkddns.com/" method="get" target="blank">
+                          <div class="col s12 m6 l4 m-y" ng-repeat="button in buttons"> 
+                              <button type="submit" class="waves-effect waves-light btn" ng-attr-id="{{button.name}}" ng-click="situation()" ng-value="button.stat" name="{{button.name}}">{{button.label}}</button>
+                              <p>{{button.name}}</p>                                                  
+                          </div>
+                       </form>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/materialize.min.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script>
+                
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function($scope) {               
+                
+                //Esse bloco popula o array "estado" com os dados vindo do sessionStorage
+                //Aqui, fiz uma verificação apenas porque as informações estão vindo com quebra de linha mas a primeira vem sem.
+                var estado = [];                    
+                for(i = 0; i < sessionStorage.length; i++){
+                    if(sessionStorage.getItem("B"+(i+1)) !== null){
+                        estado[i] = sessionStorage.getItem("B"+ (i+1)) //Sem quebra de linha (primeira)
+                    }else{
+                        estado[i] = sessionStorage.getItem("\nB"+ (i+1)) //Com quebra de linha (demais)
+                    }
+                }
+                console.log(estado); // Array populada, verificação no console.
+                
+                //Esse bloco serve para criar os botões de acordo com as informações do array "estado"
+                var botao = [];               
+                for(i = 0; i < estado.length; i++){
+                    if(estado[i] === "d"){
+                        botao[i] = {name:"B"+(i+1), stat:"d", label:"Desligado"};
+                    }else{
+                        botao[i] = {name:"B"+(i+1), stat:"l", label:"Ligado"};
+                    }    
+                }
+                $scope.buttons = botao;
+                console.log($scope.buttons); // Botões, verificação no console
+                
+                //CÓDIGO ESTÁTICO (ANTERIOR)
+                /* $scope.buttons = [{name:"B1", stat:"d", label:"Desligado"},
+                 *                   {name:"B2", stat:"d", label:"Desligado"},
+                 *                   {name:"B3", stat:"d", label:"Desligado"},
+                 *                   {name:"B4", stat:"d", label:"Desligado"},
+                 *                   {name:"B5", stat:"d", label:"Desligado"},
+                 *                   {name:"B6", stat:"d", label:"Desligado"},];
+                 */
+                
+
+                $scope.situation= function(){
+                    var vrau = this.$index;
+                    if($scope.buttons[vrau].stat === "d"){
+                        $scope.buttons[vrau].label = "Ligado";
+                        $scope.buttons[vrau].stat = "l";
+                        console.log($scope.buttons[vrau]); //Verificação no console
+                    }else{
+                        $scope.buttons[vrau].label = "Desligado";
+                        $scope.buttons[vrau].stat = "d";
+                        console.log($scope.buttons[vrau]); //Verificação no console
+                    }
+                };
+            });       
+
+        </script>
+    </body>
+</html>
