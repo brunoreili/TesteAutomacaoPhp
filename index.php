@@ -63,7 +63,7 @@
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/materialize.min.js"></script>
          <?php 
-            $url = file_get_contents('https://hometeste.dlinkddns.com/');
+            $url = file_get_contents('http://hometeste.dlinkddns.com/');
             $result = preg_replace("/\<p\>(.*?)\<\/p\>/i", "\\1", $url);
         ?>
         <div id="storage" style="display:none;">
@@ -81,7 +81,7 @@
                 sessionStorage.setItem(estado[i][0], estado[i][1]);
             }
              
-            location.href='buttons.html'; //Redireciona para a página linkada
+            //location.href='buttons.html'; //Redireciona para a página linkada
         </script>
     </body>
 </html>
