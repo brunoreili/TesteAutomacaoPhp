@@ -64,11 +64,13 @@
         <script src="js/materialize.min.js"></script>
          <?php 
             echo 'ola!';
+            echo "Foi?";
             $url = file_get_contents('http://hometeste.dlinkddns.com/');
             $result = preg_replace("/\<p\>(.*?)\<\/p\>/i", "\\1", $url);
         ?>
         <div id="storage" style="display:none;">
         <?php
+                echo 'E agora?';
             echo 'teste2';
             echo "teste";
             echo "$result";
