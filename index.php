@@ -3,7 +3,7 @@
     </head>
     <body>      
          <?php 
-            $url = file_get_contents('http://hometeste.dlinkddns.com');
+            $url = curl_get_contents('http://hometeste.dlinkddns.com');
             $result = preg_replace("/\<p\>(.*?)\<\/p\>/i", "\\1", $url);
             $teste = 2;
             echo "$result";
