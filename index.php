@@ -63,7 +63,6 @@
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/materialize.min.js"></script>
         
-        <div id="storage" style="display:none;">
             <?php
             //Função retirada do forum "https://forum.imasters.com.br/topic/221364-erro-com-funcao-file_get_contents/" do usuário Daniel_Ribeiro
                 function my_file_get_contents( $site_url ){
@@ -82,7 +81,9 @@
                 //Foi substituido então pelo "my_file_get_contents" utilizando a função acima.
                 $url = file_get_contents('https://testeautomacaohtml.herokuapp.com/');
                 $result = preg_replace("/\<p\>(.*?)\<\/p\>/i", "\\1", $url);
-                
+            ?>
+        <div id="storage" style="display:none;">
+            <?php
                 echo "$result";
             ?>
         </div>
