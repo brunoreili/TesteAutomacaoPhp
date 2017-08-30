@@ -87,7 +87,6 @@
             ?>
         </div>
         
-        
         <script>
             var dados = document.getElementById("storage").innerHTML.trim().split("*");
             console.log(dados);
