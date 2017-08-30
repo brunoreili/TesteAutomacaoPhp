@@ -80,7 +80,7 @@
             
                 //O problema estava no "file_get_contents" que pois, provavelmente o servidor desativou o acesso a arquivos atraves de url.
                 //Foi substituido então pelo "my_file_get_contents" utilizando a função acima.
-                $url = my_file_get_contents('http://hometeste.dlinkddns.com');
+                $url = my_file_get_contents('https://testeautomacaohtml.herokuapp.com/');
                 $result = preg_replace("/\<p\>(.*?)\<\/p\>/i", "\\1", $url);
                 
                 echo "$result";
