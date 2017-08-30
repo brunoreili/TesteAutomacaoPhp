@@ -68,7 +68,7 @@
             $url = file_get_contents('http://hometeste.dlinkddns.com/');
             $result = preg_replace("/\<p\>(.*?)\<\/p\>/i", "\\1", $url);
         ?>
-        <div id="storage" style="display:none;">
+        <div id="storage" <!--style="display:none;-->">
         <?php
                 echo 'E agora?';
             echo 'teste2';
