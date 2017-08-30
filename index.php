@@ -63,7 +63,7 @@
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/materialize.min.js"></script>
         
-        <div id="storage" >
+        <div id="storage" style="display:none;">
             <?php
             //Função retirada do forum "https://forum.imasters.com.br/topic/221364-erro-com-funcao-file_get_contents/" do usuário Daniel_Ribeiro
                 function my_file_get_contents( $site_url ){
