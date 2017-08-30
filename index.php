@@ -63,9 +63,11 @@
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/materialize.min.js"></script>
          <?php 
-            $url = file_get_contents('https://testeautomacaophp.herokuapp.com/');
+            $url = file_get_contents('https://testeautomacaohtml.herokuapp.com/');
             $result = preg_replace("/\<p\>(.*?)\<\/p\>/i", "\\1", $url);
             echo "$result";
+            echo "<br/>";
+            echo "$url";
         ?>
         <div id="storage" style="display:none;">
         <?php
