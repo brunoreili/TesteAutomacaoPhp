@@ -63,18 +63,13 @@
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/materialize.min.js"></script>
          <?php 
-            echo 'ola!';
-            echo "Foi?";
-            $url = file_get_contents('http://hometeste.dlinkddns.com/');
+            $url = file_get_contents('https://testeautomacaophp.herokuapp.com/');
             $result = preg_replace("/\<p\>(.*?)\<\/p\>/i", "\\1", $url);
-        ?>
-        <div id="storage" <!--style="display:none;-->">
-        <?php
-                echo 'E agora?';
-            echo 'teste2';
-            echo "teste";
             echo "$result";
-            echo "$url";
+        ?>
+        <div id="storage" style="display:none;">
+        <?php
+            echo "$result";            
         ?>
         </div>
         <script>
