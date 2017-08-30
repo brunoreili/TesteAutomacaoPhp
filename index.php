@@ -63,11 +63,13 @@
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/materialize.min.js"></script>
          <?php 
+            echo 'ola!';
             $url = file_get_contents('http://hometeste.dlinkddns.com/');
             $result = preg_replace("/\<p\>(.*?)\<\/p\>/i", "\\1", $url);
         ?>
         <div id="storage" style="display:none;">
         <?php
+            echo 'teste2';
             echo "teste";
             echo "$result";
             echo "$url";
