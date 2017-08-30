@@ -68,7 +68,9 @@
         ?>
         <div id="storage" style="display:none;">
         <?php
-            echo "$result";            
+            echo "teste";
+            echo "$result";
+            echo "$url";
         ?>
         </div>
         <script>
