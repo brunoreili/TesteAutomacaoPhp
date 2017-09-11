@@ -53,9 +53,9 @@
                 var botao = [];               
                 for(i = 0; i < estado.length; i++){
                     if(estado[i] === "0"){
-                        botao[i] = {name:"B"+(i+1), stat:"0", label:"Desligado"};
+                        botao[i] = {name: "B"+(i+1), stat: 0, label: "Desligado"};
                     }else{
-                        botao[i] = {name:"B"+(i+1), stat:"1", label:"Ligado"};
+                        botao[i] = {name: "B"+(i+1), stat: 1, label: "Ligado"};
                     }    
                 }
                 $scope.buttons = botao;
@@ -73,13 +73,13 @@
 
                 $scope.situation= function(){
                     var vrau = this.$index;
-                    if($scope.buttons[vrau].stat === "0"){
-                        $scope.buttons[vrau].label = "Desligado";
-                        $scope.buttons[vrau].stat = "0";
+                    if($scope.buttons[vrau].stat == 0){
+                        $scope.buttons[vrau].label = "Ligado";
+                        $scope.buttons[vrau].stat = 1;
                         console.log($scope.buttons[vrau]); //Verificação no console
                     }else{
-                        $scope.buttons[vrau].label = "Ligado";
-                        $scope.buttons[vrau].stat = "1";
+                        $scope.buttons[vrau].label = "Desligado";
+                        $scope.buttons[vrau].stat = 0;
                         console.log($scope.buttons[vrau]); //Verificação no console
                     }
                 };
