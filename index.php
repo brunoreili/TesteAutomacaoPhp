@@ -97,7 +97,7 @@
                 sessionStorage.setItem(estado[i][0], estado[i][1]);
             }
              
-            location.href='buttons.html'; //Redireciona para a página linkada
+            //location.href='buttons.html'; //Redireciona para a página linkada
         </script>
     </body>
 </html>
