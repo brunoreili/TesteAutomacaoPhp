@@ -52,7 +52,7 @@
                 //Esse bloco serve para criar os botões de acordo com as informações do array "estado"
                 var botao = [];               
                 for(i = 0; i < estado.length; i++){
-                    if(estado[i] === 0){
+                    if(estado[i] === "0"){
                         botao[i] = {name:"B"+(i+1), stat: 0, label:"Desligado"};
                     }else{
                         botao[i] = {name:"B"+(i+1), stat: 1, label:"Ligado"};
