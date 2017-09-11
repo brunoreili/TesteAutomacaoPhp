@@ -73,7 +73,7 @@
 
                 $scope.situation= function(){
                     var vrau = this.$index;
-                    if($scope.buttons[vrau].stat == 0){
+                    if($scope.buttons[vrau].stat === 0){
                         $scope.buttons[vrau].label = "Desligado";
                         $scope.buttons[vrau].stat = 0;
                         console.log($scope.buttons[vrau]); //Verificação no console
